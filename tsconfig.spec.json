@@ -5,10 +5,13 @@
         "emitDeclarationOnly": false
     },
     "include": [
+        "./index.ts",
+        "**/*.ts",
+        "**/*.tsx",
         "**/*.test.ts",
         ".storybook/**/*.ts",
         "jest.config.ts",
         "vite.config.ts"
     ],
-    "exclude": []
+    "exclude": ["dist/"]
 }
