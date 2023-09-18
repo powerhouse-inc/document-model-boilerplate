@@ -10,7 +10,14 @@
         "strict": true,
         "noImplicitAny": true,
         "skipLibCheck": true,
-        "emitDeclarationOnly": true
+        "emitDeclarationOnly": true,
+        "jsx": "react-jsx"
     },
-    "include": ["./index.ts", "**/*.ts"]
+    "include": ["./index.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": [
+        "**/*.test.ts",
+        ".storybook/**/*.ts",
+        "jest.config.ts",
+        "vite.config.ts"
+    ]
 }
