@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { readdirSync } from 'node:fs';
 import { getConfig } from '@acaldas/powerhouse';
 
 const { documentModelsDir, editorsDir } = getConfig();
@@ -10,6 +11,14 @@ const entry = {
     documentModels: resolve(documentModelsDir, 'index.ts'),
     editors: resolve(editorsDir, 'index.ts'),
 };
+
+// add subpackage for each document model
+readdirSync(documentModelsDir, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+    .forEach(name => {
+        entry[name] = resolve(documentModelsDir, name, 'index.ts');
+    });
 
 export default defineConfig(() => {
     const external = [
