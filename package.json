@@ -35,7 +35,7 @@
         "test": "jest"
     },
     "devDependencies": {
-        "@acaldas/powerhouse": "^1.0.8",
+        "@acaldas/powerhouse": "^1.0.9",
         "@storybook/addon-essentials": "^7.4.1",
         "@storybook/addon-interactions": "^7.4.1",
         "@storybook/addon-links": "^7.4.1",

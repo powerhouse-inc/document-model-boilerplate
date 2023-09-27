@@ -1,10 +1,5 @@
 import type { Action, BaseAction, Document } from 'document-model/document';
 
-export type EditorModule<S, A extends Action> = {
-    Component: React.FC<EditorProps<S, A>>;
-    documentTypes: string[];
-};
-
 export type EditorContext = {
     theme: 'light' | 'dark';
     debug?: boolean;

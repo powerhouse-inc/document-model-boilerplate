@@ -18,10 +18,10 @@
     "@graphql-tools/utils" "^10.0.0"
     graphlib "^2.1.8"
 
-"@acaldas/powerhouse@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@acaldas/powerhouse/-/powerhouse-1.0.8.tgz#31c3c4a89d381127c9f21e6de5f39a18322caced"
-  integrity sha512-hZ8E27MEPisM+/2YDldWLSJ+unTbrBehfk1yShg0GLJAQb4fpHP3riQf5vdtoph5MVzdfdXTOGpIQ1O0bGStZQ==
+"@acaldas/powerhouse@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@acaldas/powerhouse/-/powerhouse-1.0.9.tgz#73bcbcc127b60968e901551002e9353f3b30836b"
+  integrity sha512-NB5xo1EKDhDQaxjOQ+XpZq0zoV4TYhFmx8R5uhbYNNJpsxzroAG1fJjSdznJBRK1k5kWJWj7s7mMiHPjMFtXfQ==
   dependencies:
     "@acaldas/graphql-codegen-typescript-validation-schema" "^0.12.3"
     "@graphql-codegen/cli" "^5.0.0"
