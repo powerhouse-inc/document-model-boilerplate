@@ -28,7 +28,7 @@ cd "PROJECT_NAME"
 
 After running the command, you'll have a new project directory created.
 
-### Option 1: Clone an existing Document Model Library Project
+### Option 2: Clone an existing Document Model Library Project
 
 ```bash
 git clone https://github.com/powerhouse-inc/document-model-libs.git
@@ -36,7 +36,7 @@ cd document-model-libs
 yarn install
 ```
 
-### Step 3: Generate the Document Model
+## Step 3: Generate the Document Model
 
 Generate the document model using the following command, replacing `"DOCUMENT_MODEL"` with the the path to the ZIP file saved previously:
 

@@ -35,7 +35,7 @@
         "test": "jest"
     },
     "devDependencies": {
-        "@acaldas/powerhouse": "^1.0.9",
+        "@acaldas/powerhouse": "^1.0.10",
         "@storybook/addon-essentials": "^7.4.1",
         "@storybook/addon-interactions": "^7.4.1",
         "@storybook/addon-links": "^7.4.1",
@@ -64,7 +64,7 @@
         "vite-plugin-dts": "^3.5.3"
     },
     "peerDependencies": {
-        "document-model": "^1.0.3",
+        "document-model": "^1.0.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     }
