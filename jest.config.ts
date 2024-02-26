@@ -1,5 +1,5 @@
 import { JestConfigWithTsJest } from 'ts-jest';
-import { getConfig } from '@acaldas/powerhouse';
+import { getConfig } from '@powerhousedao/codegen';
 
 const { documentModelsDir, editorsDir } = getConfig();
 

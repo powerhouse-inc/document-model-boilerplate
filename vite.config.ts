@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { readdirSync } from 'node:fs';
-import { getConfig } from '@acaldas/powerhouse';
+import { getConfig } from '@powerhousedao/codegen';
 
 const { documentModelsDir, editorsDir } = getConfig();
 
