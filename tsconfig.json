@@ -1,24 +1,29 @@
 {
     "compilerOptions": {
+        "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "types": ["node"],
-        "declaration": true,
+        "types": ["node", "vitest/globals"],
+        "declaration": false,
         "outDir": "./dist",
+        "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitAny": true,
         "skipLibCheck": true,
-        "emitDeclarationOnly": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "lib": ["ESNext", "dom", "dom.iterable"],
+        "baseUrl": "./",
+        "allowJs": true,
     },
-    "include": ["./index.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": [
-        "dist/",
-        "**/*.test.ts",
-        ".storybook/**/*.ts",
-        "jest.config.ts",
-        "vite.config.ts"
-    ]
+    "include": [
+        "./index.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "*.config.js",
+        "*.config.ts",
+        ".storybook/**/*",
+    ],
+    "exclude": ["dist/", "node_modules"],
 }
