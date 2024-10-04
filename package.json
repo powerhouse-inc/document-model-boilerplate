@@ -43,8 +43,8 @@
         "connect": "connect"
     },
     "peerDependencies": {
-        "document-model": "^1.8.0",
-        "document-model-libs": "^1.90.1",
+        "document-model": "^2.1.0",
+        "document-model-libs": "^1.92",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
@@ -53,7 +53,7 @@
         "@eslint/eslintrc": "^3.1.0",
         "@eslint/js": "^9.11.1",
         "@powerhousedao/codegen": "^0.1.0",
-        "@powerhousedao/connect": "1.0.0-dev.135",
+        "@powerhousedao/connect": "develop",
         "@storybook/addon-essentials": "^8.3.3",
         "@storybook/addon-interactions": "^8.3.3",
         "@storybook/addon-links": "^8.3.3",
@@ -70,12 +70,11 @@
         "@typescript-eslint/eslint-plugin": "^8.7.0",
         "@typescript-eslint/parser": "^8.7.0",
         "document-model": "^2.1.0",
-        "document-model-libs": "^1.90.1",
+        "document-model-libs": "^1.92",
         "eslint": "^9.11.1",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-react": "^7.37.0",
-        "eslint-plugin-storybook": "^0.9.0",
         "globals": "^15.9.0",
         "prettier": "^3.3.3",
         "prettier-plugin-organize-imports": "^4.1.0",
