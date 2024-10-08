@@ -52,7 +52,7 @@
         "@eslint/compat": "^1.1.1",
         "@eslint/eslintrc": "^3.1.0",
         "@eslint/js": "^9.11.1",
-        "@powerhousedao/codegen": "^0.1.0",
+        "@powerhousedao/codegen": "^0.2.0",
         "@powerhousedao/connect": "develop",
         "@storybook/addon-essentials": "^8.3.3",
         "@storybook/addon-interactions": "^8.3.3",
