@@ -27,7 +27,7 @@
         }
     },
     "scripts": {
-        "generate": "powerhouse generate",
+        "generate": "ph generate",
         "format-generated": "npx prettier '**/gen/**/*' --write --config ./prettier.config.js --ignore-path /dev/null",
         "postgenerate": "npm run format-generated",
         "check-types": "tsc",
@@ -40,7 +40,7 @@
         "test:nogen": "vitest run",
         "test:watch": "vitest",
         "prepublishOnly": "npm run build",
-        "connect": "connect"
+        "connect": "ph dev"
     },
     "peerDependencies": {
         "document-model": "^2.3.0",
@@ -52,7 +52,7 @@
         "@eslint/compat": "^1.1.1",
         "@eslint/eslintrc": "^3.1.0",
         "@eslint/js": "^9.11.1",
-        "@powerhousedao/codegen": "^0.6.0",
+        "@powerhousedao/ph-cli": "^0.2.1",
         "@powerhousedao/connect": "develop",
         "@storybook/addon-essentials": "^8.3.3",
         "@storybook/addon-interactions": "^8.3.3",
