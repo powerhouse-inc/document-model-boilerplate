@@ -40,7 +40,7 @@
         "test:nogen": "vitest run",
         "test:watch": "vitest",
         "prepublishOnly": "npm run build",
-        "connect": "connect"
+        "connect": "connect --config-file ./powerhouse.config.json"
     },
     "peerDependencies": {
         "document-model": "^2.3.0",
