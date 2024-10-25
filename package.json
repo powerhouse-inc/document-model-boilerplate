@@ -44,7 +44,7 @@
     },
     "peerDependencies": {
         "document-model": "^2.2.0",
-        "document-model-libs": "^1.101.0",
+        "document-model-libs": "^1.102.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
@@ -52,8 +52,9 @@
         "@eslint/compat": "^1.1.1",
         "@eslint/eslintrc": "^3.1.0",
         "@eslint/js": "^9.11.1",
-        "@powerhousedao/codegen": "^0.8.0",
+        "@powerhousedao/codegen": "^0.9.0",
         "@powerhousedao/connect": "develop",
+        "@powerhousedao/scalars": "latest",
         "@storybook/addon-essentials": "^8.3.3",
         "@storybook/addon-interactions": "^8.3.3",
         "@storybook/addon-links": "^8.3.3",
@@ -70,7 +71,7 @@
         "@typescript-eslint/eslint-plugin": "^8.7.0",
         "@typescript-eslint/parser": "^8.7.0",
         "document-model": "^2.2.0",
-        "document-model-libs": "^1.101.0",
+        "document-model-libs": "^1.102.0",
         "eslint": "^9.11.1",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
