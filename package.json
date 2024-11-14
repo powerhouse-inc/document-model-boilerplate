@@ -28,7 +28,7 @@
     },
     "scripts": {
         "generate": "powerhouse generate",
-        "format-generated": "npx prettier '**/gen/**/*' --write --config ./prettier.config.js --ignore-path /dev/null",
+        "format-generated": "npx prettier \"**/gen/**/*\" --write --ignore-path /dev/null",
         "postgenerate": "npm run format-generated",
         "check-types": "tsc",
         "postlint": "npm run check-types",
