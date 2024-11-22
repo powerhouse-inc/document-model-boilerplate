@@ -57,7 +57,7 @@
         "@powerhousedao/connect": "develop",
         "@powerhousedao/scalars": "^1.8.0",
         "@powerhousedao/design-system": "^1.9.1",
-        "@powerhousedao/ph-cli": "^0.6.1"
+        "@powerhousedao/ph-cli": "^0.6.1",
         "@storybook/addon-essentials": "^8.3.3",
         "@storybook/addon-interactions": "^8.3.3",
         "@storybook/addon-links": "^8.3.3",
