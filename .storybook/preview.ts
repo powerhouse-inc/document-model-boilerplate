@@ -1,6 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { mockDateDecorator } from "storybook-mock-date-decorator";
-import "../editors/global.css";
+import "./global.css";
 
 const preview: Preview = {
   parameters: {
