@@ -11,19 +11,19 @@
     ],
     "exports": {
         ".": {
+            "types": "./dist/index.d.ts",
             "import": "./dist/es/index.js",
-            "require": "./dist/cjs/index.cjs",
-            "types": "./dist/index.d.ts"
+            "require": "./dist/cjs/index.cjs"
         },
         "./editors": {
+            "types": "./dist/editors.d.ts",
             "import": "./dist/es/editors.js",
-            "require": "./dist/cjs/editors.cjs",
-            "types": "./dist/editors.d.ts"
+            "require": "./dist/cjs/editors.cjs"
         },
         "./document-models": {
+            "types": "./dist/documentModels.d.ts",
             "import": "./dist/es/documentModels.js",
-            "require": "./dist/cjs/documentModels.cjs",
-            "types": "./dist/documentModels.d.ts"
+            "require": "./dist/cjs/documentModels.cjs"
         }
     },
     "scripts": {
@@ -64,6 +64,7 @@
         "@types/react": "^18.3.9",
         "@typescript-eslint/eslint-plugin": "^8.7.0",
         "@typescript-eslint/parser": "^8.7.0",
+        "autoprefixer": "^10.4.20",
         "document-model": "^2.9.0",
         "document-model-libs": "^1.118.1",
         "eslint": "^9.11.1",
@@ -72,10 +73,12 @@
         "eslint-plugin-react": "^7.37.0",
         "globals": "^15.9.0",
         "package-manager-detector": "^0.2.5",
+        "postcss": "^8.4.49",
         "prettier": "^3.3.3",
         "prettier-plugin-organize-imports": "^4.1.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "tailwindcss": "^3.4.16",
         "tsx": "^4.19.2",
         "typescript": "^5.6.2",
         "typescript-eslint": "^8.7.0",
