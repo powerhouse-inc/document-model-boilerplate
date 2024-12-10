@@ -1,5 +1,5 @@
 import { join } from "node:path";
-import { designSystemPreset } from "@powerhousedao/design-system";
+import { designSystemPreset } from "@powerhousedao/config";
 import { editorsDir } from "./powerhouse.config.json";
 
 /** @type {import('tailwindcss').Config} */
