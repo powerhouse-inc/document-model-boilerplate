@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import { InlineConfig } from 'vitest/node';
 import dts from 'vite-plugin-dts';
 import generateFile from 'vite-plugin-generate-file';
-import { getConfig } from '@powerhousedao/codegen';
+import { getConfig } from '@powerhousedao/config/powerhouse';
 
 const { documentModelsDir, editorsDir } = getConfig();
 
