@@ -45,8 +45,11 @@
         "install:storybook": "tsx scripts/index.ts"
     },
     "peerDependencies": {
-        "document-model": "2.10.0",
-        "document-model-libs": "1.120.4",
+        "@powerhousedao/analytics-engine-core": "0.3.0",
+        "@powerhousedao/reactor-api": "1.10.1",
+        "document-drive": "1.10.0",
+        "document-model": "2.11.0",
+        "document-model-libs": "1.121.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
@@ -57,9 +60,9 @@
         "@powerhousedao/codegen": "0.20.0",
         "@powerhousedao/config": "1.1.1",
         "@powerhousedao/connect": "1.0.0-dev.179",
-        "@powerhousedao/scalars": "1.12.0",
-        "@powerhousedao/design-system": "1.16.0",
-        "@powerhousedao/ph-cli": "0.10.5",
+        "@powerhousedao/design-system": "1.16.1",
+        "@powerhousedao/ph-cli": "^0.11.1",
+        "@powerhousedao/scalars": "^1.13.0",
         "@types/eslint__js": "^8.42.3",
         "@types/node": "^22.7.3",
         "@types/react": "^18.3.9",
