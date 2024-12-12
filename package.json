@@ -29,7 +29,7 @@
     "scripts": {
         "generate": "powerhouse generate",
         "reactor": "ph dev",
-        "format-generated": "npx prettier \"**/gen/**/*\" --write --ignore-path /dev/null",
+        "format-generated": "npx prettier \"**/{gen,processors,editors}/**/*\" --write --ignore-path --no-error-on-unmatched-pattern >> /dev/null",
         "postgenerate": "npm run format-generated",
         "check-types": "tsc",
         "postlint": "npm run check-types",
