@@ -86,9 +86,6 @@ importers:
       package-manager-detector:
         specifier: ^0.2.8
         version: 0.2.8
-      ph-cmd:
-        specifier: dev
-        version: 0.20.0(@babel/core@7.26.0)(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@parcel/watcher@2.5.0)(@tanstack/query-core@5.64.2)(@types/node@22.10.7)(@types/pg@8.11.10)(@types/react@18.3.18)(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)
       postcss:
         specifier: ^8.5.1
         version: 8.5.1
@@ -2047,28 +2044,12 @@ packages:
   '@powerhousedao/analytics-engine-knex@0.4.0':
     resolution: {integrity: sha512-WzMwRR8K1p/MA8SpkOXv6IR5KUjJv7QRce8Y372H5agjBlZvE8WwDUDgsNRcGEX+1ArD87vverkN/c6j+ui+ag==}
 
-  '@powerhousedao/codegen@0.29.1':
-    resolution: {integrity: sha512-56nYIURMUK+IH+KlNqxGjYP4msbL8MhaqBUIcx3Xy+ZPP9R7hTxREOmQym4QbMYhc+Xj6V0WYMqB0SwIyevOgg==}
-    hasBin: true
-
   '@powerhousedao/codegen@0.31.0':
     resolution: {integrity: sha512-zP+fUhd/nzOGZAw6/hDyJajPNRenWGacyndjT0cxErRghSPNmiabhtg2EGbtuNmxZ4HcD5xHx3jA8Mufuqzu5A==}
     hasBin: true
 
   '@powerhousedao/config@1.10.0':
     resolution: {integrity: sha512-pYfBs6xeKlOA2d6SbrD8yczxkH56uz/K0TTUMrPGwa+KS1vbzTkrycSEizHchp0O86LGoBvcis8F/lvNVbfafg==}
-
-  '@powerhousedao/config@1.7.0':
-    resolution: {integrity: sha512-6L5qxy14BetAQ88PPZpn3rwu8ZmcC0HLR3XxS4mYIJ4vnEkLw6EM4cAaqc/vtwbaLrhD49PZfRJa35JMtcsrhA==}
-
-  '@powerhousedao/connect@1.0.0-dev.181':
-    resolution: {integrity: sha512-UVNdViymnJsx6Xaf9bE8c/EPrYsYybmXRARijTGDF9VxJza5BlS7JlSFaPN/InFVHl4RBWPiUlZe/+q6Wh5E0g==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
-    peerDependencies:
-      '@powerhousedao/design-system': latest
-      '@powerhousedao/scalars': latest
-      document-model-libs: latest
 
   '@powerhousedao/connect@1.0.0-dev.189':
     resolution: {integrity: sha512-iR9OcZz+XUJiDu7gt419MgJu9j+u9MxVT9bzQiQ37bF+etITNEZFCdL8dHyC4VwNmokYvXJ5EKHlfYGF+ub4Eg==}
@@ -2078,12 +2059,6 @@ packages:
       '@powerhousedao/design-system': latest
       '@powerhousedao/scalars': latest
       document-model-libs: latest
-
-  '@powerhousedao/design-system@1.19.2':
-    resolution: {integrity: sha512-yvzc2zggdlu+EYobpGgQN0eSZvrAkD0keyKBFBcKQuGwR3AfdekqugfGbJCY1Vl6TPUPdTbsArjK9mN7h/+NCQ==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
 
   '@powerhousedao/design-system@1.21.0':
     resolution: {integrity: sha512-qCZV1+52u7QPmSuEbbWnFFEPLex8A3PsgqjifL8CPc4+pxt8GQhNAaxGnSOa2bhcA/h5pZowoDtBrPbBzv34tA==}
@@ -2095,25 +2070,12 @@ packages:
     resolution: {integrity: sha512-SPlKcO2c6nPKrv/5Lejn6MuCbZs1cxPQU9poGibfq+Fc0rOtUQ7SRStdAqAcbRIPsINoQXO+F/TBfDLkdp5JHA==}
     hasBin: true
 
-  '@powerhousedao/reactor-api@1.14.8':
-    resolution: {integrity: sha512-9zD/S2G7EqV+BoZCYNRLgyZco26A1U8TDI3wj3nS1VVFaPBzvBLBTI0EbxBzqmqimMB+K1c+wbrar8Ve5BVCcg==}
-
   '@powerhousedao/reactor-api@1.16.0':
     resolution: {integrity: sha512-bpk6kP72DlHV+FiCGIj4YoSjQNd1yg1NTbG2/5FC3BNQeURj+CxH2xGq1+Y5CvGCfgtTgxNRLQMs/mENtcMBeQ==}
-
-  '@powerhousedao/reactor-local@1.13.2':
-    resolution: {integrity: sha512-57gIE5zPTqRx699EZfLeIdpF6Rm0nfAa+RtqEezXLccYpy72Uspe0rrnLMQOpjGyRmvdEv9fOEt6cVRIL91J/Q==}
-    hasBin: true
 
   '@powerhousedao/reactor-local@1.15.0':
     resolution: {integrity: sha512-PZQFUaHeLrGGyibdYkmlEOeg3OlS7BYbXSPm2es5/hNDjBZT9zgReC4OtsRW9SZYiV+B9EcD83kDZL0iARct4g==}
     hasBin: true
-
-  '@powerhousedao/scalars@1.16.0':
-    resolution: {integrity: sha512-Bf11stqF2ejSDJOdJqvmmAxF619+R6HWCPbBCBaEqNRVe3oarMTeIPFZ8nbJXiv15TOgg+uJMQ5uqIwPUEdUZA==}
-    peerDependencies:
-      graphql: ^16.9.0
-      zod: ^3.23.8
 
   '@powerhousedao/scalars@1.18.0':
     resolution: {integrity: sha512-9LUZzf5zFXAmdkOFhzl8fXQuAQwVlTC3WAWhbeCnEYgOwuk5HKEmI0ZcGj6BcNbfpsRuCImDywnYfDCpIACL8g==}
@@ -3868,14 +3830,8 @@ packages:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
 
-  document-model-libs@1.125.5:
-    resolution: {integrity: sha512-tOUSYUXV2O9vOOYQ3wPGQhupxYIIS4/L5RiVfTgPnPn6A8kIa2jrjhhYCJURCU1kfVMrbD3QAEdd2gy5Ml8wDg==}
-
   document-model-libs@1.127.0:
     resolution: {integrity: sha512-nPzEf0frRdeIqI7hdRK65vff8Ep7+oiojvJtd9oMqInKem+YoluWfX7hqGH3vJd5rkKmFzsMBu0uoQQ33T4b3A==}
-
-  document-model@2.15.0:
-    resolution: {integrity: sha512-obHvLL2ZbvEuyqv6hboVilm1NGmRGY+m+x+0kfavgAopKP7iUy7EKjEFt9QJ/PFBjAeYQISpvCWGdcBM8Rfj6w==}
 
   document-model@2.17.0:
     resolution: {integrity: sha512-g81WIfSACTay1l8D238kopFsp3aQ2nvCF2cls3o71DG6fys7YaFY1ejXjL1IjlZq8Rdj1ZPDpyx0XTooUt9y5g==}
@@ -5753,10 +5709,6 @@ packages:
 
   pgpass@1.0.5:
     resolution: {integrity: sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==}
-
-  ph-cmd@0.20.0:
-    resolution: {integrity: sha512-68dOPOdBchd3q34dKthUAOtTcAS37sgPpUi1DqsVDS6XVTtPsBWmlIDaDHVJ+N25kEJd04blwdC2WFp9UlqSAw==}
-    hasBin: true
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -9461,34 +9413,6 @@ snapshots:
       - supports-color
       - tedious
 
-  '@powerhousedao/codegen@0.29.1(@babel/core@7.26.0)(@parcel/watcher@2.5.0)(bufferutil@4.0.9)(graphql@16.10.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)':
-    dependencies:
-      '@acaldas/graphql-codegen-typescript-validation-schema': 0.12.3(@babel/core@7.26.0)(graphql@16.10.0)
-      '@anatine/zod-mock': 3.13.5(@faker-js/faker@8.4.1)(zod@3.24.1)
-      '@faker-js/faker': 8.4.1
-      '@graphql-codegen/cli': 5.0.3(@babel/core@7.26.0)(@parcel/watcher@2.5.0)(@types/node@20.17.14)(bufferutil@4.0.9)(enquirer@2.4.1)(graphql@16.10.0)(typescript@5.7.3)(utf-8-validate@5.0.10)
-      '@graphql-codegen/typescript': 4.1.2(@babel/core@7.26.0)(graphql@16.10.0)
-      '@powerhousedao/config': 1.7.0(@types/node@20.17.14)
-      '@types/node': 20.17.14
-      arg: 5.0.2
-      change-case: 4.1.2
-      document-model: 2.15.0
-      enquirer: 2.4.1
-      execa: 8.0.1
-      hygen: 6.2.11
-      prettier: 3.4.2
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@parcel/watcher'
-      - bufferutil
-      - cosmiconfig-toml-loader
-      - encoding
-      - graphql
-      - supports-color
-      - typescript
-      - utf-8-validate
-      - zod
-
   '@powerhousedao/codegen@0.31.0(@babel/core@7.26.0)(@parcel/watcher@2.5.0)(bufferutil@4.0.9)(graphql@16.10.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)':
     dependencies:
       '@acaldas/graphql-codegen-typescript-validation-schema': 0.12.3(@babel/core@7.26.0)(graphql@16.10.0)
@@ -9529,39 +9453,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@powerhousedao/config@1.7.0(@types/node@20.17.14)':
-    dependencies:
-      '@microsoft/api-extractor': 7.49.1(@types/node@20.17.14)
-    transitivePeerDependencies:
-      - '@types/node'
-
-  '@powerhousedao/config@1.7.0(@types/node@22.10.7)':
-    dependencies:
-      '@microsoft/api-extractor': 7.49.1(@types/node@22.10.7)
-    transitivePeerDependencies:
-      - '@types/node'
-
-  '@powerhousedao/connect@1.0.0-dev.181(@powerhousedao/design-system@1.19.2(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.7)(document-model-libs@1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
-    dependencies:
-      '@powerhousedao/design-system': 1.19.2(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/scalars': 1.16.0(graphql@16.10.0)(zod@3.24.1)
-      commander: 12.1.0
-      document-model-libs: 1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      vite: 5.4.14(@types/node@22.10.7)
-      vite-envs: 4.4.10
-    optionalDependencies:
-      '@esbuild/linux-x64': 0.21.5
-      '@rollup/rollup-linux-x64-musl': 4.14.3
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-
   '@powerhousedao/connect@1.0.0-dev.189(@powerhousedao/design-system@1.21.0(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.18.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.7)(document-model-libs@1.127.0(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@powerhousedao/design-system': 1.21.0(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)
@@ -9582,79 +9473,6 @@ snapshots:
       - stylus
       - sugarss
       - terser
-
-  '@powerhousedao/design-system@1.19.2(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)':
-    dependencies:
-      '@internationalized/date': 3.7.0
-      '@powerhousedao/scalars': 1.16.0(graphql@16.10.0)(zod@3.24.1)
-      '@radix-ui/react-checkbox': 1.1.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-dialog': 1.1.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-dropdown-menu': 2.1.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-popover': 1.1.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-radio-group': 1.2.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-separator': 1.1.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-slot': 1.1.1(@types/react@18.3.18)(react@18.3.1)
-      '@radix-ui/react-switch': 1.1.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-tabs': 1.1.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-tooltip': 1.1.6(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-visually-hidden': 1.1.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tanstack/react-query': 5.64.2(react@18.3.1)
-      '@tanstack/react-virtual': 3.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      change-case: 5.4.4
-      class-variance-authority: 0.7.1
-      clsx: 2.1.1
-      cmdk: 1.0.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      date-fns: 4.1.0
-      date-fns-tz: 3.2.0(date-fns@4.1.0)
-      document-model: 2.15.0
-      mathjs: 13.2.3
-      nanoid: 5.0.9
-      natural-orderby: 4.0.0
-      react: 18.3.1
-      react-circle-flags: 0.0.22(react@18.3.1)
-      react-dom: 18.3.1(react@18.3.1)
-      react-hook-form: 7.54.2(react@18.3.1)
-      react-multi-select-component: 4.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-number-format: 5.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-select: 5.9.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-toastify: 10.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      tailwind-merge: 2.6.0
-      tailwindcss-animate: 1.0.7(tailwindcss@3.4.17)
-      usehooks-ts: 3.1.0(react@18.3.1)
-      viem: 2.22.10(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)
-      wagmi: 2.14.8(@tanstack/query-core@5.64.2)(@tanstack/react-query@5.64.2(react@18.3.1))(@types/react@18.3.18)(bufferutil@4.0.9)(react@18.3.1)(typescript@5.7.3)(utf-8-validate@5.0.10)(viem@2.22.10(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1))(zod@3.24.1)
-      world-countries: 5.0.0
-      zod: 3.24.1
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@react-native-async-storage/async-storage'
-      - '@tanstack/query-core'
-      - '@types/react'
-      - '@types/react-dom'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/kv'
-      - aws4fetch
-      - bufferutil
-      - db0
-      - encoding
-      - graphql
-      - immer
-      - ioredis
-      - supports-color
-      - tailwindcss
-      - typescript
-      - uploadthing
-      - utf-8-validate
 
   '@powerhousedao/design-system@1.21.0(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)':
     dependencies:
@@ -9814,70 +9632,6 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@powerhousedao/reactor-api@1.14.8(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@types/pg@8.11.10)(@types/react@18.3.18)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@apollo/server': 4.11.3(graphql@16.10.0)
-      '@apollo/subgraph': 2.9.3(graphql@16.10.0)
-      '@electric-sql/pglite': 0.2.16
-      '@powerhousedao/analytics-engine-core': 0.3.2
-      '@powerhousedao/analytics-engine-knex': 0.4.0
-      body-parser: 1.20.3
-      cors: 2.8.5
-      document-model-libs: 1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      dotenv: 16.4.7
-      drizzle-kit: 0.25.0
-      drizzle-orm: 0.34.1(@electric-sql/pglite@0.2.16)(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@types/pg@8.11.10)(@types/react@18.3.18)(knex@3.1.0(pg@8.13.1))(pg@8.13.1)(react@18.3.1)
-      express: 4.21.2
-      graphql: 16.10.0
-      graphql-request: 6.1.0(graphql@16.10.0)
-      jsonwebtoken: 9.0.2
-      knex: 3.1.0(pg@8.13.1)
-      knex-pglite: 0.10.0(pg@8.13.1)
-      ms: 2.1.3
-      nanoevents: 9.1.0
-      pg: 8.13.1
-      siwe: 2.3.2(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))
-      uuid: 9.0.1
-      wildcard-match: 5.1.4
-      zod: 3.24.1
-    transitivePeerDependencies:
-      - '@aws-sdk/client-rds-data'
-      - '@cloudflare/workers-types'
-      - '@codemirror/language'
-      - '@codemirror/state'
-      - '@codemirror/view'
-      - '@libsql/client'
-      - '@neondatabase/serverless'
-      - '@op-engineering/op-sqlite'
-      - '@opentelemetry/api'
-      - '@planetscale/database'
-      - '@prisma/client'
-      - '@tidbcloud/serverless'
-      - '@types/better-sqlite3'
-      - '@types/pg'
-      - '@types/react'
-      - '@types/react-dom'
-      - '@types/sql.js'
-      - '@vercel/postgres'
-      - '@xata.io/client'
-      - better-sqlite3
-      - bun-types
-      - encoding
-      - ethers
-      - expo-sqlite
-      - kysely
-      - mysql
-      - mysql2
-      - pg-native
-      - postgres
-      - prisma
-      - react
-      - react-dom
-      - sql.js
-      - sqlite3
-      - supports-color
-      - tedious
-
   '@powerhousedao/reactor-api@1.16.0(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@types/pg@8.11.10)(@types/react@18.3.18)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@apollo/server': 4.11.3(graphql@16.10.0)
@@ -9942,66 +9696,6 @@ snapshots:
       - supports-color
       - tedious
 
-  '@powerhousedao/reactor-local@1.13.2(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/pg@8.11.10)(@types/react@18.3.18)(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)':
-    dependencies:
-      '@apollo/subgraph': 2.9.3(graphql@16.10.0)
-      '@electric-sql/pglite': 0.2.16
-      '@libsql/client': 0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      '@powerhousedao/reactor-api': 1.14.8(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@types/pg@8.11.10)(@types/react@18.3.18)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@powerhousedao/scalars': 1.16.0(graphql@16.10.0)(zod@3.24.1)
-      change-case: 5.4.4
-      commander: 12.1.0
-      document-model: 2.15.0
-      document-model-libs: 1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      dotenv: 16.4.7
-      express: 4.21.2
-      graphql: 16.10.0
-      graphql-request: 6.1.0(graphql@16.10.0)
-      json-stringify-deterministic: 1.0.12
-      ms: 2.1.3
-      nanoevents: 9.1.0
-      sanitize-filename: 1.6.3
-      uuid: 11.0.5
-    transitivePeerDependencies:
-      - '@aws-sdk/client-rds-data'
-      - '@cloudflare/workers-types'
-      - '@codemirror/language'
-      - '@codemirror/state'
-      - '@codemirror/view'
-      - '@neondatabase/serverless'
-      - '@op-engineering/op-sqlite'
-      - '@opentelemetry/api'
-      - '@planetscale/database'
-      - '@prisma/client'
-      - '@tidbcloud/serverless'
-      - '@types/better-sqlite3'
-      - '@types/pg'
-      - '@types/react'
-      - '@types/react-dom'
-      - '@types/sql.js'
-      - '@vercel/postgres'
-      - '@xata.io/client'
-      - better-sqlite3
-      - bufferutil
-      - bun-types
-      - encoding
-      - ethers
-      - expo-sqlite
-      - kysely
-      - mysql
-      - mysql2
-      - pg-native
-      - postgres
-      - prisma
-      - react
-      - react-dom
-      - sql.js
-      - sqlite3
-      - supports-color
-      - tedious
-      - utf-8-validate
-      - zod
-
   '@powerhousedao/reactor-local@1.15.0(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/pg@8.11.10)(@types/react@18.3.18)(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)':
     dependencies:
       '@apollo/subgraph': 2.9.3(graphql@16.10.0)
@@ -10061,11 +9755,6 @@ snapshots:
       - tedious
       - utf-8-validate
       - zod
-
-  '@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1)':
-    dependencies:
-      graphql: 16.10.0
-      zod: 3.24.1
 
   '@powerhousedao/scalars@1.18.0(graphql@16.10.0)(zod@3.24.1)':
     dependencies:
@@ -12234,30 +11923,6 @@ snapshots:
     dependencies:
       esutils: 2.0.3
 
-  document-model-libs@1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      '@codemirror/lang-json': 6.0.1
-      '@codemirror/search': 6.5.8
-      '@graphql-tools/schema': 10.0.16(graphql@16.10.0)
-      '@graphql-tools/utils': 10.7.2(graphql@16.10.0)
-      '@internationalized/date': 3.7.0
-      '@radix-ui/react-tabs': 1.1.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      copy-anything: 3.0.5
-      date-fns: 3.6.0
-      jszip: 3.10.1
-      mathjs: 13.2.3
-      thememirror: 2.0.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)
-      usehooks-ts: 3.1.0(react@18.3.1)
-    transitivePeerDependencies:
-      - '@codemirror/language'
-      - '@codemirror/state'
-      - '@codemirror/view'
-      - '@types/react'
-      - '@types/react-dom'
-      - graphql
-      - react
-      - react-dom
-
   document-model-libs@1.127.0(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@codemirror/lang-json': 6.0.1
@@ -12281,16 +11946,6 @@ snapshots:
       - graphql
       - react
       - react-dom
-
-  document-model@2.15.0:
-    dependencies:
-      change-case: 5.4.4
-      jszip: 3.10.1
-      mime: 4.0.6
-      mutative: 1.1.0
-      safe-stable-stringify: 2.5.0
-      sha1-uint8array: 0.10.7
-      zod: 3.24.1
 
   document-model@2.17.0:
     dependencies:
@@ -14429,90 +14084,6 @@ snapshots:
   pgpass@1.0.5:
     dependencies:
       split2: 4.2.0
-
-  ph-cmd@0.20.0(@babel/core@7.26.0)(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@parcel/watcher@2.5.0)(@tanstack/query-core@5.64.2)(@types/node@22.10.7)(@types/pg@8.11.10)(@types/react@18.3.18)(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1):
-    dependencies:
-      '@powerhousedao/codegen': 0.29.1(@babel/core@7.26.0)(@parcel/watcher@2.5.0)(bufferutil@4.0.9)(graphql@16.10.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)
-      '@powerhousedao/config': 1.7.0(@types/node@22.10.7)
-      '@powerhousedao/connect': 1.0.0-dev.181(@powerhousedao/design-system@1.19.2(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.7)(document-model-libs@1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@powerhousedao/design-system': 1.19.2(@tanstack/query-core@5.64.2)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/reactor-local': 1.13.2(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/pg@8.11.10)(@types/react@18.3.18)(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)
-      '@powerhousedao/scalars': 1.16.0(graphql@16.10.0)(zod@3.24.1)
-      colorette: 2.0.20
-      commander: 12.1.0
-      document-model-libs: 1.125.5(@codemirror/language@6.10.8)(@codemirror/state@6.5.1)(@codemirror/view@6.36.2)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      graphql: 16.10.0
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    transitivePeerDependencies:
-      - '@aws-sdk/client-rds-data'
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@babel/core'
-      - '@capacitor/preferences'
-      - '@cloudflare/workers-types'
-      - '@codemirror/language'
-      - '@codemirror/state'
-      - '@codemirror/view'
-      - '@deno/kv'
-      - '@neondatabase/serverless'
-      - '@netlify/blobs'
-      - '@op-engineering/op-sqlite'
-      - '@opentelemetry/api'
-      - '@parcel/watcher'
-      - '@planetscale/database'
-      - '@prisma/client'
-      - '@react-native-async-storage/async-storage'
-      - '@tanstack/query-core'
-      - '@tidbcloud/serverless'
-      - '@types/better-sqlite3'
-      - '@types/node'
-      - '@types/pg'
-      - '@types/react'
-      - '@types/react-dom'
-      - '@types/sql.js'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/kv'
-      - '@vercel/postgres'
-      - '@xata.io/client'
-      - aws4fetch
-      - better-sqlite3
-      - bufferutil
-      - bun-types
-      - cosmiconfig-toml-loader
-      - db0
-      - encoding
-      - ethers
-      - expo-sqlite
-      - immer
-      - ioredis
-      - kysely
-      - less
-      - lightningcss
-      - mysql
-      - mysql2
-      - pg-native
-      - postgres
-      - prisma
-      - sass
-      - sass-embedded
-      - sql.js
-      - sqlite3
-      - stylus
-      - sugarss
-      - supports-color
-      - tailwindcss
-      - tedious
-      - terser
-      - typescript
-      - uploadthing
-      - utf-8-validate
-      - zod
 
   picocolors@1.1.1: {}
 

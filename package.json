@@ -74,7 +74,6 @@
         "document-model-libs": "^1.127.0",
         "eslint": "^9.18.0",
         "eslint-config-prettier": "^9.1.0",
-        "ph-cmd": "dev",
         "eslint-plugin-prettier": "^5.2.3",
         "eslint-plugin-react": "^7.37.4",
         "globals": "^15.14.0",
