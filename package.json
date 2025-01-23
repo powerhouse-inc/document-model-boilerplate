@@ -43,7 +43,10 @@
         "prepublishOnly": "npm run build",
         "connect": "connect --config-file ./powerhouse.config.json",
         "reactor": "ph-cli reactor",
-        "install:storybook": "tsx scripts/index.ts"
+        "install:storybook": "tsx scripts/index.ts",
+        "service": "ph-cli service",
+        "service-startup": "bash ./node_modules/@powerhousedao/ph-cli/scripts/service-startup.sh",
+        "service-unstartup": "bash ./node_modules/@powerhousedao/ph-cli/scripts/service-unstartup.sh"
     },
     "peerDependencies": {
         "document-model": "^2.17.0",
