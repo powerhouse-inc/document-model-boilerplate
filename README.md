@@ -6,7 +6,7 @@ This boilerplate ensures compatibility with host applications like Connect and t
 <details>
 <summary>Available NPM commands</summary>
 
--   `generate`: Updates the generated code according to the JSON spec and GraphQL schema.
+-   `generate`: Updates the generated code according to the JSON spec and GraphQL schema of your document model, made in Connect.
 -   `lint`: Checks for errors with ESLint and TypeScript checking.
 -   `format`: Formats the code using Prettier.
 -   `build`: Builds the library project using Vite.
@@ -17,27 +17,34 @@ This boilerplate ensures compatibility with host applications like Connect and t
 </details>
 
 ### 1. Defining Your Document Model GraphQL Schema
-Start by creating your own document model library.
+Start by creating your own 'Powerhouse Project' (Document model + editor).
 
-Step 1: Run the following command to set up your document model library:
+Step 1: Run the following command to set up your project inside this directory:
 
 ```bash
 npm create document-model-lib
 ```
 
-Step 2: Use the Document Model Editor in the Connect app:
+Step 2: Use the Document Model Editor in the Connect app
 
-Launch Connect in Studio Mode:
+The following command gives you access to all the powerhouse CLI tools available, install it globally if you are a poweruser. 
+
+```bash
+npm install ph-cmd
+```
+Now you are able to launch Connect in Studio Mode (Locally):
 
 ```bash
 npm run connect
 ```
 
-Open the Document Model Editor to define your document schema.
-This schema will define the structure and fields for your document model using GraphQL.
+Open the 'Document Model' creator at the bottom of connect to define your document mode with it's GraphQL Schema Definition.
+This schema will define the structure and fields for your document model using GraphQL. 
+Follow one of our tutorials on Academy to get familiar with the process. 
 
 ### 2. Defining Document Model Operations
-Using the Document Model Operations Editor, define the operations for your document model and their GraphQL counterparts. These operations will handle state changes within your document model.
+Using the Document Model Operations Editor, define the operations for your document model and their GraphQL counterparts. 
+These operations will handle state changes within your document model.
 
 **Best Practices:**
 
