@@ -1,7 +1,10 @@
-# Standard Document Model Workflow with help of the boilerplate.
+# Document Model Boilerplate
+
+This Document Model Boilerplate provides code generation for scaffolding editors and models. 
+It ensures compatibility with host applications like Connect and the Reactors for seamless document model and editor integration.
+
+## Standard Document Model Workflow with help of the boilerplate.
 This tutorial will guide you through the process of creating a new document model using the Document Model Editor in the Connect app. 
-We'll use the Document Model Boilerplate, which provides code generation for scaffolding editors and models. 
-This boilerplate ensures compatibility with host applications like Connect and the Reactors for seamless document model and editor integration.
 
 <details>
 <summary>Available NPM commands</summary>
