@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "license": "AGPL-3.0-only",
     "types": "dist/index.d.ts",
-    "main": "dist/index.cjs",
+    "main": "dist/index.js",
     "module": "dist/index.js",
     "type": "module",
     "files": [
@@ -13,21 +13,21 @@
         ".": {
             "types": "./dist/index.d.ts",
             "import": "./dist/es/index.js",
-            "require": "./dist/cjs/index.cjs"
+            "require": "./dist/cjs/index.js"
         },
         "./editors": {
             "types": "./dist/editors.d.ts",
             "import": "./dist/es/editors.js",
-            "require": "./dist/cjs/editors.cjs"
+            "require": "./dist/cjs/editors.js"
         },
         "./document-models": {
             "types": "./dist/documentModels.d.ts",
             "import": "./dist/es/documentModels.js",
-            "require": "./dist/cjs/documentModels.cjs"
+            "require": "./dist/cjs/documentModels.js"
         }
     },
     "scripts": {
-        "generate": "powerhouse generate",
+        "generate": "ph-cli generate",
         "dev": "ph-cli dev --config-file ./powerhouse.config.json",
         "format-generated": "npx prettier \"**/{gen,processors,editors}/**/*\" --write --ignore-path --no-error-on-unmatched-pattern >> /dev/null",
         "postgenerate": "npm run format-generated",
@@ -47,6 +47,7 @@
         "service": "ph-cli service"
     },
     "peerDependencies": {
+        "@powerhousedao/reactor-browser": "1.11.0",
         "document-model": "^2.17.0",
         "document-model-libs": "^1.127.3",
         "react": "^18.3.1",
@@ -63,6 +64,7 @@
         "@powerhousedao/design-system": "dev",
         "@powerhousedao/ph-cli": "dev",
         "@powerhousedao/reactor-api": "dev",
+        "@powerhousedao/reactor-browser": "dev",
         "@powerhousedao/reactor-local": "dev",
         "@powerhousedao/scalars": "dev",
         "@types/eslint__js": "^8.42.3",
