@@ -73,7 +73,7 @@
         "@typescript-eslint/eslint-plugin": "^8.21.0",
         "@typescript-eslint/parser": "^8.21.0",
         "autoprefixer": "^10.4.20",
-        "document-model": "dev",
+        "document-model": "2.20.0",
         "document-model-libs": "dev",
         "eslint": "^9.18.0",
         "eslint-config-prettier": "^9.1.0",
