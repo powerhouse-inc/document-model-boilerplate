@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "license": "AGPL-3.0-only",
     "types": "dist/index.d.ts",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
+    "main": "dist/cjs/index.js",
+    "module": "dist/es/index.js",
     "type": "module",
     "files": [
         "/dist"
@@ -46,15 +46,13 @@
         "test:nogen": "vitest run",
         "test:watch": "vitest",
         "prepublishOnly": "npm run build",
-        "connect": "connect --config-file ./powerhouse.config.json",
+        "connect": "ph-cli connect",
         "reactor": "ph-cli reactor",
         "install:storybook": "tsx scripts/index.ts",
         "service": "ph-cli service"
     },
     "peerDependencies": {
-        "@powerhousedao/reactor-browser": "^1.11.0",
-        "document-model": "^2.17.0",
-        "document-model-libs": "^1.127.3",
+        "document-model": "^2.20.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
@@ -79,7 +77,6 @@
         "@typescript-eslint/parser": "^8.21.0",
         "autoprefixer": "^10.4.20",
         "document-model": "2.20.0",
-        "document-model-libs": "dev",
         "eslint": "^9.18.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.3",
