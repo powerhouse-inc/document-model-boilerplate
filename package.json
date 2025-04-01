@@ -49,7 +49,8 @@
         "connect": "connect --config-file ./powerhouse.config.json",
         "reactor": "ph-cli reactor",
         "install:storybook": "tsx scripts/index.ts",
-        "service": "ph-cli service"
+        "service": "ph-cli service",
+        "generate:subgraph:document": "ph-cli generate --subgraph document"
     },
     "peerDependencies": {
         "@powerhousedao/reactor-browser": "^1.11.0",
