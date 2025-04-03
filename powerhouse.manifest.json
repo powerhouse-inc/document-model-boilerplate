@@ -19,5 +19,7 @@
             "documentTypes": ["your-model-id"]
         }
     ],
-    "apps": []
+    "apps": [],
+    "subgraphs": [],
+    "importScripts": []
 }
