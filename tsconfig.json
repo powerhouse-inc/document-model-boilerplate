@@ -25,5 +25,5 @@
         "*.config.ts",
         ".storybook/**/*",
     ],
-    "exclude": ["dist/", "node_modules", ".storybook"],
+    "exclude": ["dist/", "node_modules"],
 }
