@@ -3,19 +3,25 @@
 The Document Model Boilerplate is a foundational template that is used for code generation when scaffolding your editors and models. 
 It ensures compatibility with host applications like Connect and Switchboard for seamless document model and editor integration. 
 
-After installing `ph-cmd`, you will run `ph init`to initialize a project directory & structure. This initialization command makes use of the boilerplate
+After installing `ph-cmd`, you will run `ph init`to initialize a project directory & structure. 
+This initialization command makes use of the boilerplate.
 
 ## Standard Document Model Workflow with help of the boilerplate.
-This tutorial will guide you through the process of creating a new document model using the Document Model Editor in the Connect app. 
+This standard workflow will guide you through the process of creating a new document model using the Document Model Editor in the Connect app. 
 
 ### 1. Install or update the Powerhouse CLI to the latest stable version:
 
 The following command gives you access to all the powerhouse CLI tools available, install it globally if you are a poweruser. 
-`pnpm install -g ph-cmd`
+
+```bash
+pnpm install -g ph-cmd
+```
 
 ### 2. Setup a new Powerhouse Project
 
-`ph init`
+```bash
+ph init
+```
 
 This command will initialize a project directory & structure. This initialization command makes use of the boilerplate
 
@@ -26,7 +32,7 @@ To achieve this you'll use the Document Model Editor in the Connect app
 Since you've installed the Powerhouse-CLI you are able to launch Connect in Studio Mode (Locally):
 
 ```bash
-phconnect
+ph connect
 ```
 
 Open the 'Document Model' creator at the bottom of connect to define your document mode with it's GraphQL Schema Definition.
