@@ -60,6 +60,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.2.12",
     "@eslint/js": "^9.22.0",
     "@powerhousedao/analytics-engine-core": "^0.3.2",
     "@powerhousedao/codegen": "dev",
