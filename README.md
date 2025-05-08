@@ -1,38 +1,44 @@
 # Document Model Boilerplate
 
-The Document Model Boilerplate is a foundational template that is used for code generation when scaffolding your editors and models. 
-It ensures compatibility with host applications like Connect and Switchboard for seamless document model and editor integration. 
-
-After installing `ph-cmd`, you will run `ph init`to initialize a project directory & structure. 
-This initialization command makes use of the boilerplate.
+This Document Model Boilerplate provides code generation for scaffolding editors and models. 
+It ensures compatibility with host applications like Connect and the Reactors for seamless document model and editor integration.
 
 ## Standard Document Model Workflow with help of the boilerplate.
-This standard workflow will guide you through the process of creating a new document model using the Document Model Editor in the Connect app. 
+This tutorial will guide you through the process of creating a new document model using the Document Model Editor in the Connect app. 
 
-### 1. Install or update the Powerhouse CLI to the latest stable version:
+<details>
+<summary>Available NPM commands</summary>
+
+-   `generate`: Updates the generated code according to the JSON spec and GraphQL schema of your document model, made in Connect.
+-   `lint`: Checks for errors with ESLint and TypeScript checking.
+-   `format`: Formats the code using Prettier.
+-   `build`: Builds the library project using Vite.
+-   `storybook`: Starts Storybook in development mode.
+-   `build-storybook`: Builds Storybook.
+-   `test`: Runs Jest for testing.
+
+</details>
+
+### 1. Defining Your Document Model GraphQL Schema
+Start by creating your own 'Powerhouse Project' (Document model + editor).
+
+Step 1: Run the following command to set up your project inside this directory:
+
+```bash
+npm create document-model-lib
+```
+
+Step 2: Use the Document Model Editor in the Connect app
 
 The following command gives you access to all the powerhouse CLI tools available, install it globally if you are a poweruser. 
 
 ```bash
-pnpm install -g ph-cmd
+npm install ph-cmd
 ```
-
-### 2. Setup a new Powerhouse Project
+Now you are able to launch Connect in Studio Mode (Locally):
 
 ```bash
-ph init
-```
-
-This command will initialize a project directory & structure. This initialization command makes use of the boilerplate
-
-### 3. Defining Your Document Model GraphQL Schema
-Start by populating your own 'Powerhouse Project' (Document model + editor).
-To achieve this you'll use the Document Model Editor in the Connect app
-
-Since you've installed the Powerhouse-CLI you are able to launch Connect in Studio Mode (Locally):
-
-```bash
-ph connect
+npm run connect
 ```
 
 Open the 'Document Model' creator at the bottom of connect to define your document mode with it's GraphQL Schema Definition.
@@ -55,7 +61,7 @@ Import the .zip file into your project directory created in Step 1.
 Run the following command to generate the scaffolding code:
 
 ```bash
-ph generate YourModelName.phdm.zip
+npm run generate YourModelName.phdm.zip
 ```
 
 This will create a new directory under /document-models containing:
@@ -97,14 +103,14 @@ npm test
 Test the editor functionality:
 
 ```bash
-ph connect
+npm run connect
 ```
 
 ### 5. Implementing Document Editors
 Generate the editor template for your document model:
 
 ```bash
-ph generate -- --editor YourModelName --document-types powerhouse/YourModelName
+npm run generate -- --editor YourModelName --document-types powerhouse/YourModelName
 ```
 
 The --editor flag specifies the name of your document model.
@@ -123,7 +129,7 @@ Customize the editor interface to suit your document model.
 Run the Connect app to test your document editor:
 
 ```bash
-ph connect
+npm run connect
 ```
 
 Verify that the editor functions as expected.
