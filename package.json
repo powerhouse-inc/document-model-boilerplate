@@ -70,6 +70,7 @@
     "@powerhousedao/reactor-browser": "dev",
     "@powerhousedao/reactor-local": "dev",
     "@powerhousedao/scalars": "dev",
+    "@powerhousedao/switchboard": "dev",
     "@tailwindcss/cli": "^4.0.15",
     "@types/node": "^22.13.11",
     "@types/react": "^18.3.19",
