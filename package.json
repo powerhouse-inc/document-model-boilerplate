@@ -70,6 +70,7 @@
     "@powerhousedao/reactor-browser": "staging",
     "@powerhousedao/reactor-local": "staging",
     "@powerhousedao/scalars": "staging",
+    "@powerhousedao/switchboard": "staging",
     "@tailwindcss/cli": "^4.1.4",
     "@types/node": "^22.14.1",
     "@types/react": "^18.3.20",
