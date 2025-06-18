@@ -52,7 +52,7 @@
     "service-unstartup": "bash ./node_modules/@powerhousedao/ph-cli/dist/scripts/service-unstartup.sh"
   },
   "dependencies": {
-    "@powerhousedao/builder-tools": "staging",
+    "@powerhousedao/builder-tools": "latest",
     "@powerhousedao/common": "staging",
     "@powerhousedao/design-system": "staging",
     "document-model": "staging",
