@@ -63,7 +63,7 @@
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.12",
     "@eslint/js": "^9.25.0",
-    "@powerhousedao/analytics-engine-core": "^0.3.2",
+    "@powerhousedao/analytics-engine-core": "^0.5.0",
     "@powerhousedao/codegen": "latest",
     "@powerhousedao/ph-cli": "latest",
     "@powerhousedao/reactor-api": "latest",
