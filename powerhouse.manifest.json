@@ -1,10 +1,10 @@
 {
-    "name": "your-model-name",
-    "description": "A brief description of your PH package.",
-    "category": "your-category",
+    "name": "",
+    "description": "",
+    "category": "",
     "publisher": {
-        "name": "your-publisher-name",
-        "url": "your-publisher-url"
+        "name": "",
+        "url": ""
     },
     "documentModels": [
         {
