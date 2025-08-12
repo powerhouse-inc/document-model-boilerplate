@@ -35,6 +35,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "build:tsc": "tsc",
     "build:tsc:watch": "tsc --watch",
     "build:css": "npx @tailwindcss/cli -i ./style.css -o ./dist/style.css",
@@ -69,6 +70,7 @@
     "@powerhousedao/reactor-api": "dev",
     "@powerhousedao/reactor-browser": "dev",
     "@powerhousedao/reactor-local": "dev",
+    "@powerhousedao/reactor-mcp": "dev",
     "@powerhousedao/scalars": "dev",
     "@powerhousedao/switchboard": "dev",
     "@powerhousedao/vetra": "dev",
@@ -88,7 +90,7 @@
     "react-dom": "^18.3.1",
     "tailwindcss": "^4.0.15",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.27.0",
+    "typescript-eslint": "^8.39.1",
     "vite": "^6.2.3",
     "vitest": "^3.0.9"
   },
