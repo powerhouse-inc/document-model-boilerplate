@@ -52,6 +52,26 @@ If the `reactor-mcp` server is unavailable, ask the user to run `ph vetra` on a 
 - Reducers are wrapped with Mutative - you can mutate the state object directly
 - External imports go at the beginning of the actual reducer file in `src/`
 
+### 4. Quality assurance
+
+After doing changes to the code, or after creating a new document model or a new editor, _YOU MUST RUN_ the following commands to check for errors in your implementation:
+
+- **TypeScript Check**: Run `npm run typecheck` to validate type safety
+- **ESLint Check**: Run `npm run lint:fix` to check for errors with ESLint
+
+## Document editor creation flow
+
+When the user requests to create a new document editor, follow these steps:
+
+- Create a new editor document on the "vetra" drive if available, of type `powerhouse/document-editor`
+- Check the document editor schema and comply with it
+- After adding the editor document to the `vetra` drive, a new editor will be generated in the `editors` folder
+- Implement the editor using a style tag or tailwind classes. If using a style tag, make sure to make the selectors specific to only apply to the editor component.
+- Create modular components for the UI elements to make it easier to maintain and update
+- Separate business logic from presentation logic
+- Use TypeScript for type safety, avoid using any and type casting
+- Always check for type and lint errors after creating or modifying the editor
+
 ## ⚠️ CRITICAL: Generated Files & Modification Rules
 
 ### Generated Files Rule
@@ -82,25 +102,6 @@ Use `mcp__reactor-mcp__addActions` with operations like:
 2. ✅ Update document model via MCP with same fixes
 
 **Forgetting step 2 means future code generations will still contain the bugs!**
-
-## Code Quality Hooks
-
-The project has Claude hooks configured in `.claude/settings.local.json` that automatically:
-
-### UserPromptSubmit Hooks
-
-- **TypeScript Check**: Runs `tsc --noEmit` to validate type safety (60s timeout)
-- **ESLint Check**: Runs ESLint on source files only, excludes generated `gen/` folders (30s timeout)
-
-### PostToolUse Hooks
-
-- **Prettier Format**: Auto-formats source code after `Edit`, `MultiEdit`, or `Write` operations (30s timeout)
-
-**Hook Structure:**
-
-- Events use matchers (regex patterns) to target specific tools
-- Commands run with specified timeouts
-- Only affects source files, avoids interference with auto-generated files
 
 ## Reducer Implementation Guidelines
 
@@ -292,7 +293,3 @@ throw new MissingIdError("message");
 - Reflect user intent with descriptive names
 - Simple, specific fields over complex nested types
 - System auto-generates `OID` for new objects (users don't provide manually)
-
-## TypeScript Guidelines
-
-Follow the nullable input type handling guidelines in the **Reducer Implementation Guidelines** section above.
