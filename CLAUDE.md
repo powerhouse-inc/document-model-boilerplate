@@ -76,6 +76,60 @@ When the user requests to create or make changes on a document editor, follow th
 - Use TypeScript for type safety, avoid using any and type casting
 - Always check for type and lint errors after creating or modifying the editor
 
+### Document Editor Implementation Pattern
+
+**CRITICAL**: When implementing document editors, use the modern React hooks pattern from `@powerhousedao/reactor-browser`:
+
+#### Required Imports and Setup
+
+```typescript
+import { useDocumentById } from "@powerhousedao/reactor-browser";
+import { useCallback } from "react";
+import type { EditorProps } from "document-model";
+import {
+  type YourDocumentType,
+  actions,
+} from "../../document-models/your-model/index.js";
+
+export type IProps = EditorProps;
+
+export default function Editor(props: IProps) {
+  const { document: initialDocument } = props;
+  const [document, dispatch] = useDocumentById(initialDocument.header.id);
+  const typedDocument = document as YourDocumentType;
+```
+
+#### Key Implementation Rules
+
+1. **NEVER use `props.dispatch` directly** - it doesn't exist on `EditorProps`
+2. **ALWAYS use `useDocumentById` hook** to get reactive document state and dispatch function
+3. **Cast the document to your specific type** for proper TypeScript support
+4. **Use `useCallback` for event handlers** to optimize performance
+5. **Access state via the typed document**: `typedDocument.state.global` or `typedDocument.state.local`
+
+#### Example Event Handler Pattern
+
+```typescript
+const handleAction = useCallback((param: string) => {
+  dispatch(actions.yourAction({ param }));
+}, [dispatch]);
+```
+
+#### State Access Pattern
+
+```typescript
+// For type safety, cast the global/local state
+const globalState = typedDocument.state.global as { 
+  yourField: YourType; 
+  otherField: OtherType; 
+};
+
+// Then use the typed state
+const value = globalState.yourField;
+```
+
+This pattern ensures proper reactivity, type safety, and follows the latest Powerhouse editor conventions.
+
 ## ⚠️ CRITICAL: Generated Files & Modification Rules
 
 ### Generated Files Rule
