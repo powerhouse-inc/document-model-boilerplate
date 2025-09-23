@@ -72,7 +72,7 @@
     "@powerhousedao/reactor-api": "dev",
     "@powerhousedao/reactor-browser": "dev",
     "@powerhousedao/reactor-local": "dev",
-    "@powerhousedao/scalars": "dev",
+    "@powerhousedao/scalars": "2.0.1",
     "@powerhousedao/switchboard": "dev",
     "@tailwindcss/cli": "^4.0.15",
     "@testing-library/react": "^16.3.0",
