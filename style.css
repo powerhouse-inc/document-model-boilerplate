@@ -1,5 +1,4 @@
 @import "tailwindcss" source("./");
-@import "./html-defaults.css";
 @import "@powerhousedao/design-system/style.css";
 @import "@powerhousedao/document-engineering/style.css";
 @import "@powerhousedao/vetra/style.css";
