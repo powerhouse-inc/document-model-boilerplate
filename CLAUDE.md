@@ -68,6 +68,7 @@ When the user requests to create or make changes on a document editor, follow th
 - If it's a new editor, create a new editor document on the "vetra" drive if available, of type `powerhouse/document-editor`
 - Check the document editor schema and comply with it
 - After adding the editor document to the `vetra` drive, a new editor will be generated in the `editors` folder
+- Inspect the hooks in `editors/hooks` as they should be useful
 - Read the schema of the document model that the editor is for to know how to interact with it
 - Style the editor using tailwind classes or a style tag. If using a style tag, make sure to make the selectors specific to only apply to the editor component.
 - Create modular components for the UI elements and place them on separate files to make it easier to maintain and update
@@ -78,57 +79,32 @@ When the user requests to create or make changes on a document editor, follow th
 
 ### Document Editor Implementation Pattern
 
-**CRITICAL**: When implementing document editors, use the modern React hooks pattern from `@powerhousedao/reactor-browser`:
+**CRITICAL**: When implementing document editors, use the modern React hooks pattern from `@powerhousedao/reactor-browser`.
+
+The following section is valid for editors that edit a single document type.
 
 #### Required Imports and Setup
 
+Using a "Todo" document model as example:
+
 ```typescript
-import { useDocumentById } from "@powerhousedao/reactor-browser";
-import { useCallback } from "react";
-import type { EditorProps } from "document-model";
+import { generateId } from "document-model";
+import { useSelectedTodoDocument } from "../hooks/useTodoDocument.js";
 import {
-  type YourDocumentType,
-  actions,
-} from "../../document-models/your-model/index.js";
+  addTodo,
+} from "../../document-models/todo/gen/creators.js";
 
-export type IProps = EditorProps;
+export default function Editor() {
+  const [document, dispatch] = useSelectedTodoDocument();
 
-export default function Editor(props: IProps) {
-  const { document: initialDocument } = props;
-  const [document, dispatch] = useDocumentById(initialDocument.header.id);
-  const typedDocument = document as YourDocumentType;
+    const handleAddTodo = useCallback((values: { title: string }) {
+      if (values.name) {
+        dispatch(addTodo({ id: generateId(), title: values.title }));
+      }
+    }, [dispatch]);
 ```
 
-#### Key Implementation Rules
-
-1. **NEVER use `props.dispatch` directly** - it doesn't exist on `EditorProps`
-2. **ALWAYS use `useDocumentById` hook** to get reactive document state and dispatch function
-3. **Cast the document to your specific type** for proper TypeScript support
-4. **Use `useCallback` for event handlers** to optimize performance
-5. **Access state via the typed document**: `typedDocument.state.global` or `typedDocument.state.local`
-
-#### Example Event Handler Pattern
-
-```typescript
-const handleAction = useCallback((param: string) => {
-  dispatch(actions.yourAction({ param }));
-}, [dispatch]);
-```
-
-#### State Access Pattern
-
-```typescript
-// For type safety, cast the global/local state
-const globalState = typedDocument.state.global as { 
-  yourField: YourType; 
-  otherField: OtherType; 
-};
-
-// Then use the typed state
-const value = globalState.yourField;
-```
-
-This pattern ensures proper reactivity, type safety, and follows the latest Powerhouse editor conventions.
+The `useSelectedTodoDocument` gets generated automatically so you don't need to implement it yourself.
 
 ## ⚠️ CRITICAL: Generated Files & Modification Rules
 
