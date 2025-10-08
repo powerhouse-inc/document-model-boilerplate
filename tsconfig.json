@@ -37,6 +37,7 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "include": ["**/*", "./powerhouse.manifest.json"],
+  "files": [ "./powerhouse.manifest.json", "./vite.config.ts", "./vitest.config.ts"],
+  "include": ["**/*",],
   "exclude": ["dist", "node_modules", ".ph", "vitest.config.ts"],
 }
