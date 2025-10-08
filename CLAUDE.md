@@ -97,11 +97,11 @@ import {
 export default function Editor() {
   const [document, dispatch] = useSelectedTodoDocument();
 
-    const handleAddTodo = useCallback((values: { title: string }) {
-      if (values.name) {
-        dispatch(addTodo({ id: generateId(), title: values.title }));
-      }
-    }, [dispatch]);
+  function handleAddTodo(values: { title: string }) {
+    if (values.title) {
+      dispatch(addTodo({ id: generateId(), title: values.title }));
+    }
+  };
 ```
 
 The `useSelectedTodoDocument` gets generated automatically so you don't need to implement it yourself.
