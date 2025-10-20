@@ -84,7 +84,6 @@
     "@powerhousedao/scalars": "2.0.1",
     "@powerhousedao/switchboard": "dev",
     "@tailwindcss/cli": "^4.1.14",
-    "@testing-library/react": "^16.3.0",
     "@types/node": "^22.13.11",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
