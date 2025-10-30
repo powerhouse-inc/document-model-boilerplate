@@ -88,7 +88,7 @@ The following section is valid for editors that edit a single document type.
 Using a "Todo" document model as example:
 
 ```typescript
-import { generateId } from "document-model";
+import { generateId } from "document-model/core";
 import { useSelectedTodoDocument } from "../hooks/useTodoDocument.js";
 import {
   addTodo,
