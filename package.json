@@ -44,7 +44,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint --config eslint.config.js --cache --cache-strategy content",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch",
     "tailwind": "npx @tailwindcss/cli -i ./style.css -o ./dist/style.css",
@@ -64,7 +64,6 @@
     "@powerhousedao/document-engineering": "^1.38.0",
     "@powerhousedao/vetra": "staging",
     "@powerhousedao/builder-tools": "staging",
-
     "document-model": "staging",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
