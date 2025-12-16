@@ -79,7 +79,7 @@
     "@powerhousedao/reactor-api": "latest",
     "@powerhousedao/reactor-browser": "latest",
     "@powerhousedao/reactor-local": "latest",
-    "@powerhousedao/scalars": "latest",
+    "@powerhousedao/scalars": "^2.0.1",
     "@powerhousedao/switchboard": "latest",
     "@powerhousedao/connect": "latest",
     "@tailwindcss/cli": "^4.1.4",
