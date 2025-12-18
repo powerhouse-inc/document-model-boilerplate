@@ -59,12 +59,12 @@
     "service-unstartup": "bash ./node_modules/@powerhousedao/ph-cli/dist/scripts/service-unstartup.sh"
   },
   "dependencies": {
-    "@powerhousedao/common": "dev",
-    "@powerhousedao/design-system": "dev",
+    "@powerhousedao/common": "latest",
+    "@powerhousedao/design-system": "latest",
     "@powerhousedao/document-engineering": "^1.38.0",
-    "@powerhousedao/vetra": "dev",
-    "@powerhousedao/builder-tools": "dev",
-    "document-model": "dev",
+    "@powerhousedao/vetra": "latest",
+    "@powerhousedao/builder-tools": "latest",
+    "document-model": "latest",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
     "zod": "^4.1.13"
