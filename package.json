@@ -59,15 +59,15 @@
     "service-unstartup": "bash ./node_modules/@powerhousedao/ph-cli/dist/scripts/service-unstartup.sh"
   },
   "dependencies": {
-    "@powerhousedao/common": "staging",
-    "@powerhousedao/design-system": "staging",
+    "@powerhousedao/common": "latest",
+    "@powerhousedao/design-system": "latest",
     "@powerhousedao/document-engineering": "^1.38.0",
-    "@powerhousedao/vetra": "staging",
-    "@powerhousedao/builder-tools": "staging",
-    "document-model": "staging",
+    "@powerhousedao/vetra": "latest",
+    "@powerhousedao/builder-tools": "latest",
+    "document-model": "latest",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
-    "zod": "^3.24.2"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.12",
@@ -87,7 +87,7 @@
     "@types/node": "^24.9.2",
     "@types/react": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.0",
-    "document-drive": "staging",
+    "document-drive": "latest",
     "eslint": "^9.38.0",
     "vite-plugin-node-polyfills": "^0.24.0",
     "eslint-plugin-react": "^7.37.5",
