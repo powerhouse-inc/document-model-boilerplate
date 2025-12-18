@@ -67,7 +67,7 @@
     "document-model": "latest",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
-    "zod": "^3.25.76"
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.12",
