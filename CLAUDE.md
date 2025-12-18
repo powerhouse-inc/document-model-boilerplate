@@ -67,7 +67,21 @@ When the user requests to create or make changes on a document editor, follow th
 - Check if the document editor already exists and if it does, ask the user if a new one should be created or if the existing one should be reimplemented
 - If it's a new editor, create a new editor document on the "vetra-{hash}" drive if available, of type `powerhouse/document-editor`
 - Check the document editor schema and comply with it
-- After adding the editor document to the `vetra-{hash}` drive, a new editor will be generated in the `editors` folder
+- **CRITICAL: Confirm the document** - After setting up the editor (name, document types), you MUST use `SET_EDITOR_STATUS` with `status: "CONFIRMED"` to confirm the document. Code generation only runs automatically for confirmed documents. If you skip this step, no editor files will be generated in the `editors` folder.
+
+### ⚠️ CRITICAL: Document Confirmation Requirement
+
+The following document types require confirmation before code generation runs automatically:
+
+| Document Type | Confirmation Action |
+|--------------|---------------------|
+| `powerhouse/app` | `SET_APP_STATUS` with `status: "CONFIRMED"` |
+| `powerhouse/document-editor` | `SET_EDITOR_STATUS` with `status: "CONFIRMED"` |
+| `powerhouse/processor` | `SET_PROCESSOR_STATUS` with `status: "CONFIRMED"` |
+| `powerhouse/subgraph` | `SET_SUBGRAPH_STATUS` with `status: "CONFIRMED"` |
+
+**Why this matters**: Documents in `DRAFT` status are not processed by the code generator. You MUST confirm the document after setting it up (name, types, etc.) for the corresponding files to be auto-generated.
+- After confirming and adding the editor document to the `vetra-{hash}` drive, a new editor will be generated in the `editors` folder
 - Inspect the hooks in `editors/hooks` as they should be useful
 - Read the schema of the document model that the editor is for to know how to interact with it
 - Style the editor using tailwind classes or a style tag. If using a style tag, make sure to make the selectors specific to only apply to the editor component.
@@ -230,6 +244,32 @@ Errors referenced in the reducer code will be imported automatically.
 3. **Use specific error types** rather than generic validation
 
 4. **Must use unique error names and ids**
+
+#### ⚠️ CRITICAL: Unique Error Names Across Operations
+
+**MANDATORY**: Error names MUST be globally unique across ALL operations in a document model.
+
+Each operation generates its own error class in the `gen/` folder. If the same error name is used in multiple operations, it will cause duplicate class definitions and a build error:
+
+```
+ERROR: Multiple exports with the same name "TodoNotFoundError"
+ERROR: The symbol "TodoNotFoundError" has already been declared
+```
+
+```typescript
+// ❌ BAD - Same error name used in UPDATE_TODO and DELETE_TODO operations
+ADD_OPERATION_ERROR for UPDATE_TODO: { errorName: "TodoNotFoundError" }
+ADD_OPERATION_ERROR for DELETE_TODO: { errorName: "TodoNotFoundError" }
+
+// ✅ GOOD - Unique error names per operation
+ADD_OPERATION_ERROR for UPDATE_TODO: { errorName: "UpdateTodoNotFoundError" }
+ADD_OPERATION_ERROR for DELETE_TODO: { errorName: "DeleteTodoNotFoundError" }
+```
+
+**Naming Convention**: Prefix the error name with the operation name to ensure uniqueness:
+- `Update<Entity>NotFoundError`
+- `Delete<Entity>NotFoundError`
+- `Toggle<Entity>NotFoundError`
 
 #### Error Usage in Reducers
 
