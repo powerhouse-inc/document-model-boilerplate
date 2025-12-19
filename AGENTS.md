@@ -53,6 +53,29 @@ If the `reactor-mcp` server is unavailable, ask the user to run `ph vetra` on a 
 - External imports go at the beginning of the actual reducer file in `src/`
 - Ensure that the reducer code of each operation in the document model schema is applied in `document-models/<document-model-name>/src/reducers/<module-name>.ts`
 
+### ⚠️ CRITICAL: Reducer Files Are Generated as Stubs
+
+**MANDATORY**: After creating a new document model and adding it to a drive, the reducer files in `src/reducers/` are auto-generated with **placeholder/stub code** that throws "not implemented" errors.
+
+**You MUST manually implement the actual reducer logic in these files.**
+
+Example of generated stub (DO NOT leave like this):
+```typescript
+export const todoTodoOperations: TodoTodoOperations = {
+  addTodoOperation(state, action) {
+    // TODO: implement addTodoOperation reducer
+    throw new Error("Reducer for 'addTodoOperation' not implemented.");
+  },
+};
+```
+
+**Required steps after creating a document model:**
+1. Wait for code generation to complete (files appear in `document-models/<name>/src/reducers/`)
+2. Open the reducer file(s) in `src/reducers/<module-name>.ts`
+3. Replace the stub implementations with actual reducer logic
+4. Import error classes from `../../gen/<module-name>/error.js` if using custom errors
+5. Run `npm run tsc` and `npm run lint:fix` to verify implementation
+
 ### 4. Quality assurance
 
 After doing changes to the code, or after creating a new document model or a new editor, _YOU MUST RUN_ the following commands to check for errors in your implementation:
@@ -85,6 +108,7 @@ The following document types require confirmation before code generation runs au
 - Inspect the hooks in `editors/hooks` as they should be useful
 - Read the schema of the document model that the editor is for to know how to interact with it
 - Style the editor using tailwind classes or a style tag. If using a style tag, make sure to make the selectors specific to only apply to the editor component.
+- **Always keep the `<DocumentToolbar />` component** in editors unless the user explicitly asks to remove it
 - Create modular components for the UI elements and place them on separate files to make it easier to maintain and update
 - Consider using the React Components exported by `@powerhousedao/design-system` and `@powerhousedao/document-engineering`
 - Separate business logic from presentation logic
