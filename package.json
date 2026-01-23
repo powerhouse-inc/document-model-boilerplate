@@ -61,7 +61,7 @@
   "dependencies": {
     "@powerhousedao/common": "latest",
     "@powerhousedao/design-system": "latest",
-    "@powerhousedao/document-engineering": "^1.38.0",
+    "@powerhousedao/document-engineering": "1.40.0",
     "@powerhousedao/vetra": "latest",
     "@powerhousedao/builder-tools": "latest",
     "document-model": "latest",
