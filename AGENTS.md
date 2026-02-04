@@ -53,6 +53,29 @@ If the `reactor-mcp` server is unavailable, ask the user to run `ph vetra` on a 
 - External imports go at the beginning of the actual reducer file in `src/`
 - Ensure that the reducer code of each operation in the document model schema is applied in `document-models/<document-model-name>/src/reducers/<module-name>.ts`
 
+### ⚠️ CRITICAL: Reducer Files Are Generated as Stubs
+
+**MANDATORY**: After creating a new document model and adding it to a drive, the reducer files in `src/reducers/` are auto-generated with **placeholder/stub code** that throws "not implemented" errors.
+
+**You MUST manually implement the actual reducer logic in these files.**
+
+Example of generated stub (DO NOT leave like this):
+```typescript
+export const todoTodoOperations: TodoTodoOperations = {
+  addTodoOperation(state, action) {
+    // TODO: implement addTodoOperation reducer
+    throw new Error("Reducer for 'addTodoOperation' not implemented.");
+  },
+};
+```
+
+**Required steps after creating a document model:**
+1. Wait for code generation to complete (files appear in `document-models/<name>/src/reducers/`)
+2. Open the reducer file(s) in `src/reducers/<module-name>.ts`
+3. Replace the stub implementations with actual reducer logic
+4. Import error classes from `../../gen/<module-name>/error.js` if using custom errors
+5. Run `npm run tsc` and `npm run lint:fix` to verify implementation
+
 ### 4. Quality assurance
 
 After doing changes to the code, or after creating a new document model or a new editor, _YOU MUST RUN_ the following commands to check for errors in your implementation:
@@ -67,10 +90,25 @@ When the user requests to create or make changes on a document editor, follow th
 - Check if the document editor already exists and if it does, ask the user if a new one should be created or if the existing one should be reimplemented
 - If it's a new editor, create a new editor document on the "vetra-{hash}" drive if available, of type `powerhouse/document-editor`
 - Check the document editor schema and comply with it
-- After adding the editor document to the `vetra-{hash}` drive, a new editor will be generated in the `editors` folder
+- **CRITICAL: Confirm the document** - After setting up the editor (name, document types), you MUST use `SET_EDITOR_STATUS` with `status: "CONFIRMED"` to confirm the document. Code generation only runs automatically for confirmed documents. If you skip this step, no editor files will be generated in the `editors` folder.
+
+### ⚠️ CRITICAL: Document Confirmation Requirement
+
+The following document types require confirmation before code generation runs automatically:
+
+| Document Type | Confirmation Action |
+|--------------|---------------------|
+| `powerhouse/app` | `SET_APP_STATUS` with `status: "CONFIRMED"` |
+| `powerhouse/document-editor` | `SET_EDITOR_STATUS` with `status: "CONFIRMED"` |
+| `powerhouse/processor` | `SET_PROCESSOR_STATUS` with `status: "CONFIRMED"` |
+| `powerhouse/subgraph` | `SET_SUBGRAPH_STATUS` with `status: "CONFIRMED"` |
+
+**Why this matters**: Documents in `DRAFT` status are not processed by the code generator. You MUST confirm the document after setting it up (name, types, etc.) for the corresponding files to be auto-generated.
+- After confirming and adding the editor document to the `vetra-{hash}` drive, a new editor will be generated in the `editors` folder
 - Inspect the hooks in `editors/hooks` as they should be useful
 - Read the schema of the document model that the editor is for to know how to interact with it
 - Style the editor using tailwind classes or a style tag. If using a style tag, make sure to make the selectors specific to only apply to the editor component.
+- **Always keep the `<DocumentToolbar />` component** in editors unless the user explicitly asks to remove it
 - Create modular components for the UI elements and place them on separate files to make it easier to maintain and update
 - Consider using the React Components exported by `@powerhousedao/design-system` and `@powerhousedao/document-engineering`
 - Separate business logic from presentation logic
@@ -230,6 +268,32 @@ Errors referenced in the reducer code will be imported automatically.
 3. **Use specific error types** rather than generic validation
 
 4. **Must use unique error names and ids**
+
+#### ⚠️ CRITICAL: Unique Error Names Across Operations
+
+**MANDATORY**: Error names MUST be globally unique across ALL operations in a document model.
+
+Each operation generates its own error class in the `gen/` folder. If the same error name is used in multiple operations, it will cause duplicate class definitions and a build error:
+
+```
+ERROR: Multiple exports with the same name "TodoNotFoundError"
+ERROR: The symbol "TodoNotFoundError" has already been declared
+```
+
+```typescript
+// ❌ BAD - Same error name used in UPDATE_TODO and DELETE_TODO operations
+ADD_OPERATION_ERROR for UPDATE_TODO: { errorName: "TodoNotFoundError" }
+ADD_OPERATION_ERROR for DELETE_TODO: { errorName: "TodoNotFoundError" }
+
+// ✅ GOOD - Unique error names per operation
+ADD_OPERATION_ERROR for UPDATE_TODO: { errorName: "UpdateTodoNotFoundError" }
+ADD_OPERATION_ERROR for DELETE_TODO: { errorName: "DeleteTodoNotFoundError" }
+```
+
+**Naming Convention**: Prefix the error name with the operation name to ensure uniqueness:
+- `Update<Entity>NotFoundError`
+- `Delete<Entity>NotFoundError`
+- `Toggle<Entity>NotFoundError`
 
 #### Error Usage in Reducers
 

@@ -67,7 +67,7 @@
     "document-model": "latest",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
-    "zod": "^3.25.76"
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.12",
@@ -79,7 +79,6 @@
     "@powerhousedao/reactor-api": "latest",
     "@powerhousedao/reactor-browser": "latest",
     "@powerhousedao/reactor-local": "latest",
-    "@powerhousedao/scalars": "^2.0.1",
     "@powerhousedao/switchboard": "latest",
     "@powerhousedao/connect": "latest",
     "@tailwindcss/cli": "^4.1.4",
