@@ -17,20 +17,20 @@ This project creates document models, editors, processors and subgraphs for the 
 
 ### Quick Decision Guide
 
-| User Says | Create Document Type |
-|-----------|---------------------|
-| "Create an app" / "build a drive editor" | `powerhouse/app` |
-| "List/browse/manage multiple documents" | `powerhouse/app` |
-| "Container for my documents" | `powerhouse/app` |
-| "Define a new document type" / "create a schema" | `powerhouse/document-model` |
-| "Add operations/actions to a document" | `powerhouse/document-model` |
-| "Create a UI for editing X documents" | `powerhouse/document-editor` |
+| User Says                                        | Create Document Type         |
+| ------------------------------------------------ | ---------------------------- |
+| "Create an app" / "build a drive editor"         | `powerhouse/app`             |
+| "List/browse/manage multiple documents"          | `powerhouse/app`             |
+| "Container for my documents"                     | `powerhouse/app`             |
+| "Define a new document type" / "create a schema" | `powerhouse/document-model`  |
+| "Add operations/actions to a document"           | `powerhouse/document-model`  |
+| "Create a UI for editing X documents"            | `powerhouse/document-editor` |
 
 ### Definitions
 
-- **Document Model** (`powerhouse/document-model`) = Defines *structure* (schema + operations) for a document type
-- **Document Editor** (`powerhouse/document-editor`) = UI for *editing* a single document instance
-- **App / Drive Editor** (`powerhouse/app`) = UI for *managing collections* of documents in a drive
+- **Document Model** (`powerhouse/document-model`) = Defines _structure_ (schema + operations) for a document type
+- **Document Editor** (`powerhouse/document-editor`) = UI for _editing_ a single document instance
+- **App / Drive Editor** (`powerhouse/app`) = UI for _managing collections_ of documents in a drive
 
 ## CRITICAL: MCP Tool Usage Rules
 
@@ -128,6 +128,53 @@ export default function Editor() {
 
 The `useSelectedTodoDocument` gets generated automatically so you don't need to implement it yourself.
 
+#### Using Toasts in Editors and Apps
+
+**CRITICAL**: Do NOT import `ToastContainer` or any toast library directly. The host app (Connect) already provides the toast infrastructure. This applies to both document editors and drive apps.
+
+To show toasts in your editor or app, simply use the `usePHToast` hook from `@powerhousedao/reactor-browser`:
+
+```typescript
+import { usePHToast } from "@powerhousedao/reactor-browser";
+
+export default function Editor() {
+  const toast = usePHToast();
+
+  const handleSave = () => {
+    // ... save logic
+    toast("Document saved successfully!", { type: "success" });
+  };
+
+  const handleError = () => {
+    toast("Failed to save document", { type: "error" });
+  };
+
+  return <button onClick={handleSave}>Save</button>;
+}
+```
+
+**Available toast types:**
+
+- `"default"` - Standard notification
+- `"success"` - Success message
+- `"error"` - Error message
+- `"warning"` - Warning message
+- `"info"` - Informational message
+- `"connect-success"` - Connect-styled success
+- `"connect-warning"` - Connect-styled warning
+- `"connect-loading"` - Loading indicator
+- `"connect-deleted"` - Deletion confirmation
+
+**Toast options:**
+
+```typescript
+toast("Message", {
+  type: "success", // Toast type (see above)
+  autoClose: 5000, // Auto-close after ms (or false to disable)
+  containerId: "custom", // Target specific container
+});
+```
+
 ## App (Drive Editor) Creation Flow
 
 When the user requests to create an app or drive editor, follow these steps.
@@ -135,6 +182,7 @@ When the user requests to create an app or drive editor, follow these steps.
 ### What is an App?
 
 An app (drive editor) is a React component that:
+
 - Displays and manages documents within a drive
 - Lists multiple document models, editors, or other files
 - Provides navigation, filtering, and CRUD operations for documents
@@ -144,6 +192,7 @@ An app (drive editor) is a React component that:
 **MANDATORY**: Present your proposal and ask for confirmation before implementing.
 
 Describe:
+
 - App name
 - Which document types it will manage (`allowedDocumentTypes`)
 - Whether drag-and-drop should be enabled
@@ -153,6 +202,7 @@ Describe:
 Add a `powerhouse/app` document to the vetra drive using MCP tools:
 
 1. **Check schema first**:
+
    ```
    mcp__reactor-mcp__getDocumentModelSchema({ type: "powerhouse/app" })
    ```
@@ -166,12 +216,14 @@ Add a `powerhouse/app` document to the vetra drive using MCP tools:
 ### 3. Generated Code
 
 When status is set to "CONFIRMED", the code generator automatically:
+
 - Creates editor scaffolding in `editors/<app-name>/`
 - Updates `powerhouse.manifest.json` with the app entry
 
 ### 4. Work on Generated Code
 
 After code generation:
+
 - Editor files are created in `editors/<app-name>/`
 - Work on `editor.tsx` to customize the UI
 - Use `useSelectedDrive()` hook to access the drive document
@@ -185,13 +237,12 @@ After code generation:
 const [document] = useSelectedDrive();
 
 // Get file nodes from the drive
-const fileNodes = document?.state.global.nodes.filter(
-  (node) => node.kind === "file"
-) || [];
+const fileNodes =
+  document?.state.global.nodes.filter((node) => node.kind === "file") || [];
 
 // Filter by document type
 const documentModels = fileNodes.filter(
-  (node) => node.documentType === "powerhouse/document-model"
+  (node) => node.documentType === "powerhouse/document-model",
 );
 ```
 
