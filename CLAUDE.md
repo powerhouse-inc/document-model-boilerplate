@@ -85,35 +85,42 @@ After doing changes to the code, or after creating a new document model or a new
 
 ## Document editor creation flow
 
-When the user requests to create or make changes on a document editor, follow these steps:
+**CRITICAL**: Creating a document editor is a **two-phase** process. You must NEVER skip Phase 1 or try to manually create editor files from scratch. The codegen system generates the boilerplate — your job is only to implement the UI inside it.
 
-- Check if the document editor already exists and if it does, ask the user if a new one should be created or if the existing one should be reimplemented
-- If it's a new editor, create a new editor document on the "vetra-{hash}" drive if available, of type `powerhouse/document-editor`
-- Check the document editor schema and comply with it
-- **CRITICAL: Confirm the document** - After setting up the editor (name, document types), you MUST use `SET_EDITOR_STATUS` with `status: "CONFIRMED"` to confirm the document. Code generation only runs automatically for confirmed documents. If you skip this step, no editor files will be generated in the `editors` folder.
+### Phase 1: Create the editor document via MCP (MANDATORY FIRST STEP)
 
-### ⚠️ CRITICAL: Document Confirmation Requirement
+**NEVER** start by writing editor code, creating component files, or looking at how to scaffold an editor manually. The **only** way to create a new editor is through the MCP tools:
 
-The following document types require confirmation before code generation runs automatically:
+1. Check if the document editor already exists. If it does, ask the user if a new one should be created or if the existing one should be reimplemented
+2. If it's a new editor, get the document editor schema using `mcp__reactor-mcp__getDocumentModelSchema` with `type: "powerhouse/document-editor"`
+3. Create a new editor document on the `vetra-{hash}` drive of type `powerhouse/document-editor` using `mcp__reactor-mcp__addActions` with the `ADD_FILE` action
+4. Configure the editor document with the required actions (set the editor name, target document model, etc.) according to the schema
 
-| Document Type | Confirmation Action |
-|--------------|---------------------|
-| `powerhouse/app` | `SET_APP_STATUS` with `status: "CONFIRMED"` |
-| `powerhouse/document-editor` | `SET_EDITOR_STATUS` with `status: "CONFIRMED"` |
-| `powerhouse/processor` | `SET_PROCESSOR_STATUS` with `status: "CONFIRMED"` |
-| `powerhouse/subgraph` | `SET_SUBGRAPH_STATUS` with `status: "CONFIRMED"` |
+⚠️ **The editor document MUST be confirmed/published — if it is left as draft state, the codegen will NOT run and no editor files will be generated.** Make sure the document state is not "DRAFT" after creation.
 
-**Why this matters**: Documents in `DRAFT` status are not processed by the code generator. You MUST confirm the document after setting it up (name, types, etc.) for the corresponding files to be auto-generated.
-- After confirming and adding the editor document to the `vetra-{hash}` drive, a new editor will be generated in the `editors` folder
+5. Once the editor document is confirmed on the drive, the codegen automatically runs and generates boilerplate files in the `editors/` folder, including hooks, type definitions, and the editor component shell
+
+### Phase 2: Implement the editor UI
+
+Only **after** the codegen has produced the boilerplate files, proceed with the UI implementation:
+
+- Inspect the generated files in the `editors/` folder — do NOT create new files for the main editor component; edit the generated one
 - Inspect the hooks in `editors/hooks` as they should be useful
 - Read the schema of the document model that the editor is for to know how to interact with it
+- Every editor **MUST** include `<DocumentToolbar />` imported from `@powerhousedao/design-system/connect/index`. Place it at the top of the editor component — do not put anything next to it.
 - Style the editor using tailwind classes or a style tag. If using a style tag, make sure to make the selectors specific to only apply to the editor component.
-- **Always keep the `<DocumentToolbar />` component** in editors unless the user explicitly asks to remove it
 - Create modular components for the UI elements and place them on separate files to make it easier to maintain and update
 - Consider using the React Components exported by `@powerhousedao/design-system` and `@powerhousedao/document-engineering`
 - Separate business logic from presentation logic
 - Use TypeScript for type safety, avoid using any and type casting
 - Always check for type and lint errors after creating or modifying the editor
+- **CRITICAL**: After creating a new editor, verify that `editors/editors.ts` includes the new editor module. The codegen should update this file automatically, but if it doesn't, manually add the import and include the editor in the `editors` array. Without this registration, Connect won't find an editor for the document type. Example:
+  ```typescript
+  import type { EditorModule } from "document-model";
+  import { TodoListEditor } from "./todo-list-editor/module.js";
+
+  export const editors: EditorModule[] = [TodoListEditor];
+  ```
 
 ### Document Editor Implementation Pattern
 
@@ -126,7 +133,7 @@ The following section is valid for editors that edit a single document type.
 Using a "Todo" document model as example:
 
 ```typescript
-import { generateId } from "document-model/core";
+import { generateId } from "document-model";
 import { useSelectedTodoDocument } from "../hooks/useTodoDocument.js";
 import {
   addTodo,
@@ -140,6 +147,9 @@ export default function Editor() {
       dispatch(addTodo({ id: generateId(), title: values.title }));
     }
   };
+
+// Note: The `useSelectedTodoDocument` hook is auto-generated. Check the `editors/hooks` folder for the exact hook name.
+// Action creators like `addTodo` are exported from the document model's `gen/creators.js` file.
 ```
 
 The `useSelectedTodoDocument` gets generated automatically so you don't need to implement it yourself.
